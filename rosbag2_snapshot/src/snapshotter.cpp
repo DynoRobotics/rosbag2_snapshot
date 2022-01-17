@@ -430,7 +430,7 @@ void Snapshotter::subscribe(
   auto sub = create_generic_subscription(
     topic_details.name,
     topic_details.type,
-    rclcpp::QoS{10},
+    rclcpp::SensorDataQoS(),
     std::bind(&Snapshotter::topicCb, this, _1, queue),
     opts
   );
